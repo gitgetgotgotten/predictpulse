@@ -9,7 +9,7 @@ export default function Contact() {
   return (
     <div>
       <h1>Contact</h1>
-      <img src="/assets/page5.jpg" alt="Contact"/>
+      <img src="/predictpulse/assets/page5.jpg" alt="Contact"/>
       <nav>
         <Link to="/">Home</Link> |
         <Link to="/product-list">Product List</Link> |

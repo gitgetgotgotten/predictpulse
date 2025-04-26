@@ -19,11 +19,11 @@ async function loadEncoders() {
 }
 
 const pageImageMap = {
-  'Home': '/assets/page1.jpg',
-  'ProductList': '/assets/page2.jpg',
-  'ProductDetails': '/assets/page3.jpg',
-  'About': '/assets/page4.jpg',
-  'Contact': '/assets/page5.jpg'
+  'Home': '/predictpulse/assets/page1.jpg',
+  'ProductList': '/predictpulse/assets/page2.jpg',
+  'ProductDetails': '/predictpulse/assets/page3.jpg',
+  'About': '/predictpulse/assets/page4.jpg',
+  'Contact': '/predictpulse/assets/page5.jpg'
 };
 
 /**
@@ -72,20 +72,20 @@ export async function predictAssets(pageName) {
   const assets = [
     {
       type: 'prefetch',
-      url: '/assets/styles.css',
+      url: '/predictpulse/assets/styles.css',
       priority: 'low',
       as: 'style',
       delay: connection.downlink && connection.downlink < 2 ? 1000 : 0
     },
     {
       type: 'prefetch',
-      url: '/assets/fonts.css',
+      url: '/predictpulse/assets/fonts.css',
       priority: 'low',
       as: 'style',
       delay: connection.downlink && connection.downlink < 2 ? 1000 : 0
     },
-    {type: 'preload', url: '/assets/font.woff2', priority: 'high', as: 'font', crossOrigin: 'anonymous', delay: 500},
-    {type: 'preload', url: '/assets/utils.js', priority: 'high', as: 'script', delay: 0},
+    {type: 'preload', url: '/predictpulse/assets/font.woff2', priority: 'high', as: 'font', crossOrigin: 'anonymous', delay: 500},
+    {type: 'preload', url: '/predictpulse/assets/utils.js', priority: 'high', as: 'script', delay: 0},
     {type: 'preload', url: pageImageMap[pageName], priority: 'high', as: 'image', delay: 0},
     {
       type: 'prefetch',
@@ -109,10 +109,10 @@ export async function predictAssets(pageName) {
 export function filterPageAssets(pageName, resources) {
   const pageImage = pageImageMap[pageName];
   const requiredAssets = [
-    '/assets/styles.css',
-    '/assets/fonts.css',
-    '/assets/font.woff2',
-    '/assets/utils.js',
+    '/predictpulse/assets/styles.css',
+    '/predictpulse/assets/fonts.css',
+    '/predictpulse/assets/font.woff2',
+    '/predictpulse/assets/utils.js',
     pageImage
   ];
 

@@ -25,7 +25,7 @@ for i in range(len(data) - 1):
   }[page_map[current_page]]
   predicted_pages.append(next_pred)
 
-  next_image = f"/assets/page{page_map[next_pred] + 1}.jpg"
+  next_image = f"/predictpulse/assets/page{page_map[next_pred] + 1}.jpg"
   assets = data[i + 1]['assets']
   hit = any(asset['url'] == next_image and asset['fromCache'] for asset in assets)
   cache_hits.append(hit)

@@ -9,7 +9,7 @@ export default function ProductList() {
   return (
     <div>
       <h1>Product List</h1>
-      <img src="/assets/page2.jpg" alt="Product List"/>
+      <img src="/predictpulse/assets/page2.jpg" alt="Product List"/>
       <nav>
         <Link to="/">Home</Link> |
         <Link to="/product-details">Product Details</Link> |

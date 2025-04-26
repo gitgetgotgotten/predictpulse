@@ -9,7 +9,7 @@ export default function Home() {
   return (
     <div>
       <h1>Home</h1>
-      <img src="/assets/page1.jpg" alt="Home"/>
+      <img src="/predictpulse/assets/page1.jpg" alt="Home"/>
       <nav>
         <Link to="/product-list">Product List</Link> |
         <Link to="/product-details">Product Details</Link> |

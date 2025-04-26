@@ -9,7 +9,7 @@ export default function About() {
   return (
     <div>
       <h1>About</h1>
-      <img src="/assets/page4.jpg" alt="About"/>
+      <img src="/predictpulse/assets/page4.jpg" alt="About"/>
       <nav>
         <Link to="/">Home</Link> |
         <Link to="/product-list">Product List</Link> |

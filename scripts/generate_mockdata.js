@@ -58,8 +58,8 @@ function generateMockData(visits = 50) {
       os: uaResult.os.name || oses[Math.floor(Math.random() * oses.length)],
       browser: uaResult.browser.name || browsers[Math.floor(Math.random() * browsers.length)],
       assets: assets[currentPage].map(url => ({
-        url: `http://localhost:5173/assets/${url}`,
-        type: url.endsWith('.jpg') ? 'img' : url.endsWith('.css') ? 'style' : url.endsWith('.js') ? 'script' : 'other',
+        url: `/predictpulse/assets/${url}`,
+        type: url.endsWith('.jpg') ? 'img' : (url.endsWith('.css') ? 'style' : (url.endsWith('.js') ? 'script' : 'other')),
         fromCache: false
       })),
       navPath: [prevPage, currentPage],
