@@ -1,0 +1,26 @@
+{
+  "device": [
+    "desktop",
+    "mobile",
+    "tablet"
+  ],
+  "os": [
+    "Linux",
+    "Windows",
+    "iOS",
+    "macOS"
+  ],
+  "browser": [
+    "Chrome",
+    "Firefox",
+    "Mobile Safari",
+    "Safari"
+  ],
+  "page": [
+    "About",
+    "Contact",
+    "Home",
+    "ProductDetails",
+    "ProductList"
+  ]
+}
