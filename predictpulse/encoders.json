@@ -1,12 +1,13 @@
 {
   "device": [
-    "desktop"
+    "Other"
   ],
   "os": [
-    "Unknown"
+    "Windows"
   ],
   "browser": [
-    "Unknown"
+    "Chrome",
+    "Firefox"
   ],
   "page": [
     "About",
