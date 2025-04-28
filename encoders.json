@@ -1,20 +1,12 @@
 {
   "device": [
-    "desktop",
-    "mobile",
-    "tablet"
+    "Other"
   ],
   "os": [
-    "Linux",
-    "Windows",
-    "iOS",
-    "macOS"
+    "Windows"
   ],
   "browser": [
-    "Chrome",
-    "Firefox",
-    "Mobile Safari",
-    "Safari"
+    "Firefox"
   ],
   "page": [
     "About",
