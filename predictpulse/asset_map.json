@@ -1,9 +1,9 @@
 {
   "Home": [
     {
-      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/utils.js",
-      "type": "script",
-      "fromCache": true
+      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/page1.jpg",
+      "type": "img",
+      "fromCache": false
     },
     {
       "url": "https://gitgetgotgotten.github.io/predictpulse/assets/styles.css",
@@ -11,7 +11,29 @@
       "fromCache": false
     },
     {
-      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/index-B22JygrC.js",
+      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/utils.js",
+      "type": "script",
+      "fromCache": false
+    },
+    {
+      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/index-ByYdCZoq.js",
+      "type": "script",
+      "fromCache": false
+    },
+    {
+      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/index-CPeIIt-n.css",
+      "type": "style",
+      "fromCache": false
+    }
+  ],
+  "ProductList": [
+    {
+      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/page2.jpg",
+      "type": "img",
+      "fromCache": false
+    },
+    {
+      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/index-ByYdCZoq.js",
       "type": "script",
       "fromCache": false
     },
@@ -21,19 +43,19 @@
       "fromCache": false
     },
     {
-      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/page1.jpg",
-      "type": "img",
-      "fromCache": true
+      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/styles.css",
+      "type": "style",
+      "fromCache": false
     }
   ],
   "ProductDetails": [
     {
       "url": "https://gitgetgotgotten.github.io/predictpulse/assets/page3.jpg",
       "type": "img",
-      "fromCache": true
+      "fromCache": false
     },
     {
-      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/index-B22JygrC.js",
+      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/index-ByYdCZoq.js",
       "type": "script",
       "fromCache": false
     },
@@ -52,10 +74,10 @@
     {
       "url": "https://gitgetgotgotten.github.io/predictpulse/assets/page4.jpg",
       "type": "img",
-      "fromCache": true
+      "fromCache": false
     },
     {
-      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/index-B22JygrC.js",
+      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/index-ByYdCZoq.js",
       "type": "script",
       "fromCache": false
     },
@@ -74,10 +96,10 @@
     {
       "url": "https://gitgetgotgotten.github.io/predictpulse/assets/page5.jpg",
       "type": "img",
-      "fromCache": true
+      "fromCache": false
     },
     {
-      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/index-B22JygrC.js",
+      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/index-ByYdCZoq.js",
       "type": "script",
       "fromCache": false
     },
