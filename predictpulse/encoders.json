@@ -1,0 +1,18 @@
+{
+  "device": [
+    "desktop"
+  ],
+  "os": [
+    "Unknown"
+  ],
+  "browser": [
+    "Unknown"
+  ],
+  "page": [
+    "About",
+    "Contact",
+    "Home",
+    "ProductDetails",
+    "ProductList"
+  ]
+}
