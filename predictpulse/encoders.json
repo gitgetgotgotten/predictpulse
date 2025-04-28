@@ -1,0 +1,19 @@
+{
+  "device": [
+    "Other"
+  ],
+  "os": [
+    "Windows"
+  ],
+  "browser": [
+    "Chrome",
+    "Firefox"
+  ],
+  "page": [
+    "About",
+    "Contact",
+    "Home",
+    "ProductDetails",
+    "ProductList"
+  ]
+}
