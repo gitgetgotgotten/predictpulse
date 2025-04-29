@@ -6,23 +6,13 @@
       "fromCache": false
     },
     {
-      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/utils.js",
-      "type": "script",
-      "fromCache": false
-    },
-    {
       "url": "https://gitgetgotgotten.github.io/predictpulse/assets/styles.css",
       "type": "style",
       "fromCache": false
     },
     {
-      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/index-Dv1HFjS3.js",
+      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/utils.js",
       "type": "script",
-      "fromCache": false
-    },
-    {
-      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/index-CPeIIt-n.css",
-      "type": "style",
       "fromCache": false
     }
   ],
@@ -30,16 +20,6 @@
     {
       "url": "https://gitgetgotgotten.github.io/predictpulse/assets/page2.jpg",
       "type": "img",
-      "fromCache": false
-    },
-    {
-      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/index-Dv1HFjS3.js",
-      "type": "script",
-      "fromCache": false
-    },
-    {
-      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/index-CPeIIt-n.css",
-      "type": "style",
       "fromCache": false
     },
     {
@@ -60,9 +40,9 @@
       "fromCache": false
     }
   ],
-  "Contact": [
+  "About": [
     {
-      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/page5.jpg",
+      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/page4.jpg",
       "type": "img",
       "fromCache": false
     },
@@ -72,9 +52,9 @@
       "fromCache": false
     }
   ],
-  "About": [
+  "Contact": [
     {
-      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/page4.jpg",
+      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/page5.jpg",
       "type": "img",
       "fromCache": false
     },
