@@ -6,13 +6,13 @@
       "fromCache": false
     },
     {
-      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/styles.css",
-      "type": "style",
+      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/utils.js",
+      "type": "script",
       "fromCache": false
     },
     {
-      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/utils.js",
-      "type": "script",
+      "url": "https://gitgetgotgotten.github.io/predictpulse/assets/styles.css",
+      "type": "style",
       "fromCache": false
     }
   ],
