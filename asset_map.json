@@ -1,212 +1,212 @@
 {
-  "ProductList": [
-    {
-      "url": "/predictpulse/predictpulse/assets/page2.jpg",
-      "type": "img",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/predictpulse/assets/fonts.css",
-      "type": "style",
-      "fromCache": false
-    },
-    {
-      "url": "/predictpulse/predictpulse/assets/font.woff2",
-      "type": "font",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/predictpulse/assets/utils.js",
-      "type": "script",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/predictpulse/assets/fonts.css",
-      "type": "style",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/predictpulse/assets/utils.js",
-      "type": "script",
-      "fromCache": false
-    },
-    {
-      "url": "/predictpulse/predictpulse/assets/page2.jpg",
-      "type": "img",
-      "fromCache": false
-    },
-    {
-      "url": "/predictpulse/predictpulse/assets/font.woff2",
-      "type": "font",
-      "fromCache": false
-    }
-  ],
-  "ProductDetails": [
-    {
-      "url": "/predictpulse/predictpulse/assets/page3.jpg",
-      "type": "img",
-      "fromCache": false
-    },
-    {
-      "url": "/predictpulse/predictpulse/assets/fonts.css",
-      "type": "style",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/predictpulse/assets/font.woff2",
-      "type": "font",
-      "fromCache": false
-    },
-    {
-      "url": "/predictpulse/predictpulse/assets/utils.js",
-      "type": "script",
-      "fromCache": false
-    },
-    {
-      "url": "/predictpulse/predictpulse/assets/page3.jpg",
-      "type": "img",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/predictpulse/assets/fonts.css",
-      "type": "style",
-      "fromCache": false
-    },
-    {
-      "url": "/predictpulse/predictpulse/assets/utils.js",
-      "type": "script",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/predictpulse/assets/font.woff2",
-      "type": "font",
-      "fromCache": true
-    }
-  ],
   "About": [
     {
-      "url": "/predictpulse/predictpulse/assets/page4.jpg",
+      "url": "/predictpulse/assets/page4.jpg",
       "type": "img",
-      "fromCache": true
+      "fromCache": false
     },
     {
-      "url": "/predictpulse/predictpulse/assets/fonts.css",
+      "url": "/predictpulse/assets/fonts.css",
       "type": "style",
       "fromCache": false
     },
     {
-      "url": "/predictpulse/predictpulse/assets/font.woff2",
-      "type": "font",
-      "fromCache": false
-    },
-    {
-      "url": "/predictpulse/predictpulse/assets/utils.js",
-      "type": "script",
-      "fromCache": false
-    },
-    {
-      "url": "/predictpulse/predictpulse/assets/font.woff2",
+      "url": "/predictpulse/assets/font.woff2",
       "type": "font",
       "fromCache": true
     },
     {
-      "url": "/predictpulse/predictpulse/assets/page4.jpg",
-      "type": "img",
-      "fromCache": false
-    },
-    {
-      "url": "/predictpulse/predictpulse/assets/fonts.css",
-      "type": "style",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/predictpulse/assets/utils.js",
+      "url": "/predictpulse/assets/utils.js",
       "type": "script",
       "fromCache": true
-    }
-  ],
-  "Home": [
+    },
     {
-      "url": "/predictpulse/predictpulse/assets/page1.jpg",
+      "url": "/predictpulse/assets/page4.jpg",
       "type": "img",
       "fromCache": true
     },
     {
-      "url": "/predictpulse/predictpulse/assets/fonts.css",
-      "type": "style",
-      "fromCache": false
-    },
-    {
-      "url": "/predictpulse/predictpulse/assets/font.woff2",
-      "type": "font",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/predictpulse/assets/utils.js",
+      "url": "/predictpulse/assets/utils.js",
       "type": "script",
       "fromCache": false
     },
     {
-      "url": "/predictpulse/predictpulse/assets/page1.jpg",
-      "type": "img",
-      "fromCache": false
-    },
-    {
-      "url": "/predictpulse/predictpulse/assets/utils.js",
-      "type": "script",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/predictpulse/assets/font.woff2",
+      "url": "/predictpulse/assets/font.woff2",
       "type": "font",
       "fromCache": false
     },
     {
-      "url": "/predictpulse/predictpulse/assets/fonts.css",
+      "url": "/predictpulse/assets/fonts.css",
       "type": "style",
       "fromCache": true
     }
   ],
   "Contact": [
     {
-      "url": "/predictpulse/predictpulse/assets/page5.jpg",
+      "url": "/predictpulse/assets/page5.jpg",
       "type": "img",
       "fromCache": false
     },
     {
-      "url": "/predictpulse/predictpulse/assets/fonts.css",
+      "url": "/predictpulse/assets/fonts.css",
       "type": "style",
       "fromCache": true
     },
     {
-      "url": "/predictpulse/predictpulse/assets/font.woff2",
+      "url": "/predictpulse/assets/font.woff2",
       "type": "font",
       "fromCache": false
     },
     {
-      "url": "/predictpulse/predictpulse/assets/utils.js",
+      "url": "/predictpulse/assets/utils.js",
       "type": "script",
       "fromCache": true
     },
     {
-      "url": "/predictpulse/predictpulse/assets/page5.jpg",
+      "url": "/predictpulse/assets/fonts.css",
+      "type": "style",
+      "fromCache": false
+    },
+    {
+      "url": "/predictpulse/assets/page5.jpg",
       "type": "img",
       "fromCache": true
     },
     {
-      "url": "/predictpulse/predictpulse/assets/font.woff2",
+      "url": "/predictpulse/assets/font.woff2",
       "type": "font",
       "fromCache": true
     },
     {
-      "url": "/predictpulse/predictpulse/assets/utils.js",
+      "url": "/predictpulse/assets/utils.js",
+      "type": "script",
+      "fromCache": false
+    }
+  ],
+  "Home": [
+    {
+      "url": "/predictpulse/assets/page1.jpg",
+      "type": "img",
+      "fromCache": true
+    },
+    {
+      "url": "/predictpulse/assets/fonts.css",
+      "type": "style",
+      "fromCache": true
+    },
+    {
+      "url": "/predictpulse/assets/font.woff2",
+      "type": "font",
+      "fromCache": true
+    },
+    {
+      "url": "/predictpulse/assets/utils.js",
       "type": "script",
       "fromCache": false
     },
     {
-      "url": "/predictpulse/predictpulse/assets/fonts.css",
+      "url": "/predictpulse/assets/page1.jpg",
+      "type": "img",
+      "fromCache": false
+    },
+    {
+      "url": "/predictpulse/assets/fonts.css",
       "type": "style",
       "fromCache": false
+    },
+    {
+      "url": "/predictpulse/assets/font.woff2",
+      "type": "font",
+      "fromCache": false
+    },
+    {
+      "url": "/predictpulse/assets/utils.js",
+      "type": "script",
+      "fromCache": true
+    }
+  ],
+  "ProductList": [
+    {
+      "url": "/predictpulse/assets/page2.jpg",
+      "type": "img",
+      "fromCache": false
+    },
+    {
+      "url": "/predictpulse/assets/fonts.css",
+      "type": "style",
+      "fromCache": true
+    },
+    {
+      "url": "/predictpulse/assets/font.woff2",
+      "type": "font",
+      "fromCache": true
+    },
+    {
+      "url": "/predictpulse/assets/utils.js",
+      "type": "script",
+      "fromCache": false
+    },
+    {
+      "url": "/predictpulse/assets/page2.jpg",
+      "type": "img",
+      "fromCache": true
+    },
+    {
+      "url": "/predictpulse/assets/fonts.css",
+      "type": "style",
+      "fromCache": false
+    },
+    {
+      "url": "/predictpulse/assets/font.woff2",
+      "type": "font",
+      "fromCache": false
+    },
+    {
+      "url": "/predictpulse/assets/utils.js",
+      "type": "script",
+      "fromCache": true
+    }
+  ],
+  "ProductDetails": [
+    {
+      "url": "/predictpulse/assets/page3.jpg",
+      "type": "img",
+      "fromCache": true
+    },
+    {
+      "url": "/predictpulse/assets/fonts.css",
+      "type": "style",
+      "fromCache": false
+    },
+    {
+      "url": "/predictpulse/assets/font.woff2",
+      "type": "font",
+      "fromCache": true
+    },
+    {
+      "url": "/predictpulse/assets/utils.js",
+      "type": "script",
+      "fromCache": true
+    },
+    {
+      "url": "/predictpulse/assets/page3.jpg",
+      "type": "img",
+      "fromCache": false
+    },
+    {
+      "url": "/predictpulse/assets/font.woff2",
+      "type": "font",
+      "fromCache": false
+    },
+    {
+      "url": "/predictpulse/assets/utils.js",
+      "type": "script",
+      "fromCache": false
+    },
+    {
+      "url": "/predictpulse/assets/fonts.css",
+      "type": "style",
+      "fromCache": true
     }
   ]
 }
