@@ -5,12 +5,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PredictPulse</title>
   <link rel="stylesheet" href="/predictpulse/assets/fonts.css">
-  <script type="module" crossorigin src="/predictpulse/assets/index.D4r2s7R7.js"></script>
+  <script type="module" crossorigin src="/predictpulse/assets/index.b_l_raud.js"></script>
   <link rel="modulepreload" crossorigin href="/predictpulse/assets/vendor.By8iMDWw.js">
   <link rel="stylesheet" crossorigin href="/predictpulse/assets/index.CPeIIt-n.css">
 </head>
 <body>
   <div id="root"></div>
   <script src="/predictpulse/assets/utils.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/predictpulse/sw.js')
+        .then(() => console.log('[ServiceWorker] Registered'))
+        .catch(err => console.error('[ServiceWorker] Registration failed:', err));
+    }
+  </script>
 </body>
 </html>
