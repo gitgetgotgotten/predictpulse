@@ -1,26 +1,19 @@
 {
-  "device": [
-    "Mac",
-    "Other",
-    "iPhone"
-  ],
-  "os": [
-    "Linux",
-    "Mac OS X",
-    "Windows",
-    "iOS"
-  ],
-  "browser": [
-    "Chrome",
-    "Firefox",
-    "Mobile Safari",
-    "Safari"
-  ],
   "page": [
     "About",
     "Contact",
     "Home",
     "ProductDetails",
     "ProductList"
+  ],
+  "prev_page": [
+    "About",
+    "Contact",
+    "Home",
+    "ProductDetails",
+    "ProductList"
+  ],
+  "next_page": [
+    "Unknown"
   ]
 }
