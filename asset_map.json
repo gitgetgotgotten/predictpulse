@@ -24,11 +24,6 @@
       "url": "/predictpulse/assets/index-DKA7HppJ.js",
       "type": "script",
       "fromCache": false
-    },
-    {
-      "url": "/predictpulse/assets/font.woff2",
-      "type": "font",
-      "fromCache": true
     }
   ],
   "ProductList": [
@@ -55,11 +50,6 @@
     {
       "url": "/predictpulse/assets/index-DKA7HppJ.js",
       "type": "script",
-      "fromCache": false
-    },
-    {
-      "url": "/predictpulse/assets/font.woff2",
-      "type": "font",
       "fromCache": false
     }
   ],
@@ -88,11 +78,6 @@
       "url": "/predictpulse/assets/index-DKA7HppJ.js",
       "type": "script",
       "fromCache": false
-    },
-    {
-      "url": "/predictpulse/assets/font.woff2",
-      "type": "font",
-      "fromCache": true
     }
   ],
   "About": [
@@ -136,16 +121,6 @@
     {
       "url": "/predictpulse/assets/index-DKA7HppJ.js",
       "type": "script",
-      "fromCache": false
-    },
-    {
-      "url": "/predictpulse/assets/page5.jpg",
-      "type": "img",
-      "fromCache": false
-    },
-    {
-      "url": "/predictpulse/assets/font.woff2",
-      "type": "font",
       "fromCache": false
     }
   ]
