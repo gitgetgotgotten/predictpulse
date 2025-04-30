@@ -8,12 +8,17 @@
     {
       "url": "/predictpulse/assets/fonts.css",
       "type": "style",
-      "fromCache": true
+      "fromCache": false
     },
     {
       "url": "/predictpulse/assets/utils.js",
       "type": "script",
       "fromCache": true
+    },
+    {
+      "url": "/predictpulse/assets/font.woff2",
+      "type": "font",
+      "fromCache": false
     }
   ],
   "ProductList": [
@@ -25,11 +30,16 @@
     {
       "url": "/predictpulse/assets/fonts.css",
       "type": "style",
-      "fromCache": true
+      "fromCache": false
     },
     {
       "url": "/predictpulse/assets/utils.js",
       "type": "script",
+      "fromCache": true
+    },
+    {
+      "url": "/predictpulse/assets/font.woff2",
+      "type": "font",
       "fromCache": true
     }
   ],
@@ -37,16 +47,21 @@
     {
       "url": "/predictpulse/assets/page3.jpg",
       "type": "img",
-      "fromCache": true
+      "fromCache": false
     },
     {
       "url": "/predictpulse/assets/fonts.css",
       "type": "style",
-      "fromCache": true
+      "fromCache": false
     },
     {
       "url": "/predictpulse/assets/utils.js",
       "type": "script",
+      "fromCache": true
+    },
+    {
+      "url": "/predictpulse/assets/font.woff2",
+      "type": "font",
       "fromCache": true
     }
   ],
@@ -59,20 +74,25 @@
     {
       "url": "/predictpulse/assets/fonts.css",
       "type": "style",
+      "fromCache": true
+    },
+    {
+      "url": "/predictpulse/assets/utils.js",
+      "type": "script",
       "fromCache": false
     },
     {
       "url": "/predictpulse/assets/font.woff2",
       "type": "font",
       "fromCache": false
-    },
-    {
-      "url": "/predictpulse/assets/utils.js",
-      "type": "script",
-      "fromCache": true
     }
   ],
   "Contact": [
+    {
+      "url": "/predictpulse/assets/page5.jpg",
+      "type": "img",
+      "fromCache": true
+    },
     {
       "url": "/predictpulse/assets/fonts.css",
       "type": "style",
@@ -81,6 +101,11 @@
     {
       "url": "/predictpulse/assets/utils.js",
       "type": "script",
+      "fromCache": false
+    },
+    {
+      "url": "/predictpulse/assets/font.woff2",
+      "type": "font",
       "fromCache": true
     }
   ]
