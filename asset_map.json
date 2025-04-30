@@ -1,11 +1,6 @@
 {
   "Home": [
     {
-      "url": "/predictpulse/assets/index-a2yaSF6Z.js",
-      "type": "script",
-      "fromCache": false
-    },
-    {
       "url": "/predictpulse/assets/page1.jpg",
       "type": "img",
       "fromCache": true
@@ -33,11 +28,6 @@
       "fromCache": false
     },
     {
-      "url": "/predictpulse/assets/index-a2yaSF6Z.js",
-      "type": "script",
-      "fromCache": false
-    },
-    {
       "url": "/predictpulse/assets/fonts.css",
       "type": "style",
       "fromCache": true
@@ -58,11 +48,6 @@
       "url": "/predictpulse/assets/page3.jpg",
       "type": "img",
       "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/index-a2yaSF6Z.js",
-      "type": "script",
-      "fromCache": false
     },
     {
       "url": "/predictpulse/assets/fonts.css",
@@ -103,11 +88,6 @@
     }
   ],
   "Contact": [
-    {
-      "url": "/predictpulse/assets/index-a2yaSF6Z.js",
-      "type": "script",
-      "fromCache": false
-    },
     {
       "url": "/predictpulse/assets/fonts.css",
       "type": "style",
