@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PredictPulse</title>
   <link rel="stylesheet" href="/predictpulse/assets/fonts.css">
-  <script type="module" crossorigin src="/predictpulse/assets/index-DvqshPN0.js"></script>
+  <script type="module" crossorigin src="/predictpulse/assets/index-QIqro2p5.js"></script>
   <link rel="stylesheet" crossorigin href="/predictpulse/assets/index-CPeIIt-n.css">
 </head>
 <body>
@@ -13,9 +13,11 @@
   <script src="/predictpulse/assets/utils.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/predictpulse/sw.js')
-        .then(() => console.log('[ServiceWorker] Registered'))
-        .catch(err => console.error('[ServiceWorker] Registration failed:', err));
+      navigator.serviceWorker.register('/sw.js')
+        .then(reg => console.log('[ServiceWorker] Registered with scope:', reg.scope))
+        .catch(err => console.error('[ServiceWorker] Registration failed:', err.message, err));
+    } else {
+      console.warn('[ServiceWorker] Not supported in this browser');
     }
   </script>
 </body>
