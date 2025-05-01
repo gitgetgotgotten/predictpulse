@@ -1,1 +1,1 @@
-// Silence
+console.log('Utils loaded');
