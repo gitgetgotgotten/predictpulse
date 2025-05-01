@@ -13,7 +13,7 @@
   <script src="/predictpulse/assets/utils.js"></script>
   <script>
     if ('serviceWorker' in navigator) {
-      navigator.serviceWorker.register('/sw.js')
+      navigator.serviceWorker.register('/predictpulse/sw.js')
         .then(reg => console.log('[ServiceWorker] Registered with scope:', reg.scope))
         .catch(err => console.error('[ServiceWorker] Registration failed:', err.message, err));
     } else {
