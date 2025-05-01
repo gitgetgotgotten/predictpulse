@@ -15,5 +15,22 @@
   ],
   "next_page": [
     "Unknown"
+  ],
+  "device": [
+    "Mac",
+    "Other",
+    "iPhone"
+  ],
+  "os": [
+    "Linux",
+    "Mac OS X",
+    "Windows",
+    "iOS"
+  ],
+  "browser": [
+    "Chrome",
+    "Firefox",
+    "Mobile Safari",
+    "Safari"
   ]
 }
