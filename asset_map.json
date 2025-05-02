@@ -8,7 +8,7 @@
     {
       "url": "/predictpulse/assets/fonts.css",
       "type": "style",
-      "fromCache": true
+      "fromCache": false
     },
     {
       "url": "/predictpulse/assets/utils.js",
@@ -18,15 +18,15 @@
     {
       "url": "/predictpulse/assets/font.woff2",
       "type": "font",
-      "fromCache": true
+      "fromCache": false
     },
     {
-      "url": "/predictpulse/assets/index-mockhash.js",
+      "url": "/predictpulse/assets/index-DmvS8I2z.js",
       "type": "script",
       "fromCache": true
     },
     {
-      "url": "/predictpulse/assets/index-mockhash.css",
+      "url": "/predictpulse/assets/index-DmvS8I2z.css",
       "type": "style",
       "fromCache": true
     }
@@ -35,17 +35,17 @@
     {
       "url": "/predictpulse/assets/page2.jpg",
       "type": "img",
-      "fromCache": false
+      "fromCache": true
     },
     {
       "url": "/predictpulse/assets/fonts.css",
       "type": "style",
-      "fromCache": true
+      "fromCache": false
     },
     {
       "url": "/predictpulse/assets/utils.js",
       "type": "script",
-      "fromCache": true
+      "fromCache": false
     },
     {
       "url": "/predictpulse/assets/font.woff2",
@@ -53,12 +53,12 @@
       "fromCache": false
     },
     {
-      "url": "/predictpulse/assets/index-mockhash.js",
+      "url": "/predictpulse/assets/index-DmvS8I2z.js",
       "type": "script",
       "fromCache": true
     },
     {
-      "url": "/predictpulse/assets/index-mockhash.css",
+      "url": "/predictpulse/assets/index-DmvS8I2z.css",
       "type": "style",
       "fromCache": true
     }
@@ -72,12 +72,12 @@
     {
       "url": "/predictpulse/assets/fonts.css",
       "type": "style",
-      "fromCache": true
+      "fromCache": false
     },
     {
       "url": "/predictpulse/assets/utils.js",
       "type": "script",
-      "fromCache": true
+      "fromCache": false
     },
     {
       "url": "/predictpulse/assets/font.woff2",
@@ -85,21 +85,21 @@
       "fromCache": false
     },
     {
-      "url": "/predictpulse/assets/index-mockhash.js",
+      "url": "/predictpulse/assets/index-DmvS8I2z.js",
       "type": "script",
       "fromCache": false
     },
     {
-      "url": "/predictpulse/assets/index-mockhash.css",
+      "url": "/predictpulse/assets/index-DmvS8I2z.css",
       "type": "style",
-      "fromCache": true
+      "fromCache": false
     }
   ],
   "About": [
     {
       "url": "/predictpulse/assets/page4.jpg",
       "type": "img",
-      "fromCache": false
+      "fromCache": true
     },
     {
       "url": "/predictpulse/assets/fonts.css",
@@ -109,20 +109,20 @@
     {
       "url": "/predictpulse/assets/utils.js",
       "type": "script",
-      "fromCache": true
+      "fromCache": false
     },
     {
       "url": "/predictpulse/assets/font.woff2",
       "type": "font",
-      "fromCache": true
+      "fromCache": false
     },
     {
-      "url": "/predictpulse/assets/index-mockhash.js",
+      "url": "/predictpulse/assets/index-DmvS8I2z.js",
       "type": "script",
       "fromCache": true
     },
     {
-      "url": "/predictpulse/assets/index-mockhash.css",
+      "url": "/predictpulse/assets/index-DmvS8I2z.css",
       "type": "style",
       "fromCache": true
     }
@@ -136,7 +136,7 @@
     {
       "url": "/predictpulse/assets/fonts.css",
       "type": "style",
-      "fromCache": true
+      "fromCache": false
     },
     {
       "url": "/predictpulse/assets/utils.js",
@@ -146,15 +146,15 @@
     {
       "url": "/predictpulse/assets/font.woff2",
       "type": "font",
-      "fromCache": true
+      "fromCache": false
     },
     {
-      "url": "/predictpulse/assets/index-mockhash.js",
+      "url": "/predictpulse/assets/index-DmvS8I2z.js",
       "type": "script",
-      "fromCache": true
+      "fromCache": false
     },
     {
-      "url": "/predictpulse/assets/index-mockhash.css",
+      "url": "/predictpulse/assets/index-DmvS8I2z.css",
       "type": "style",
       "fromCache": true
     }
