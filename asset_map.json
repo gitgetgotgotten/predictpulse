@@ -21,12 +21,12 @@
       "fromCache": false
     },
     {
-      "url": "/predictpulse/assets/index-DmvS8I2z.js",
+      "url": "/predictpulse/assets/index-.*.js",
       "type": "script",
       "fromCache": true
     },
     {
-      "url": "/predictpulse/assets/index-DmvS8I2z.css",
+      "url": "/predictpulse/assets/index-.*.css",
       "type": "style",
       "fromCache": true
     }
@@ -53,12 +53,12 @@
       "fromCache": false
     },
     {
-      "url": "/predictpulse/assets/index-DmvS8I2z.js",
+      "url": "/predictpulse/assets/index-.*.js",
       "type": "script",
-      "fromCache": true
+      "fromCache": false
     },
     {
-      "url": "/predictpulse/assets/index-DmvS8I2z.css",
+      "url": "/predictpulse/assets/index-.*.css",
       "type": "style",
       "fromCache": true
     }
@@ -85,14 +85,14 @@
       "fromCache": false
     },
     {
-      "url": "/predictpulse/assets/index-DmvS8I2z.js",
+      "url": "/predictpulse/assets/index-.*.js",
       "type": "script",
-      "fromCache": false
+      "fromCache": true
     },
     {
-      "url": "/predictpulse/assets/index-DmvS8I2z.css",
+      "url": "/predictpulse/assets/index-.*.css",
       "type": "style",
-      "fromCache": false
+      "fromCache": true
     }
   ],
   "About": [
@@ -117,12 +117,12 @@
       "fromCache": false
     },
     {
-      "url": "/predictpulse/assets/index-DmvS8I2z.js",
+      "url": "/predictpulse/assets/index-.*.js",
       "type": "script",
       "fromCache": true
     },
     {
-      "url": "/predictpulse/assets/index-DmvS8I2z.css",
+      "url": "/predictpulse/assets/index-.*.css",
       "type": "style",
       "fromCache": true
     }
@@ -149,14 +149,14 @@
       "fromCache": false
     },
     {
-      "url": "/predictpulse/assets/index-DmvS8I2z.js",
+      "url": "/predictpulse/assets/index-.*.js",
       "type": "script",
-      "fromCache": false
+      "fromCache": true
     },
     {
-      "url": "/predictpulse/assets/index-DmvS8I2z.css",
+      "url": "/predictpulse/assets/index-.*.css",
       "type": "style",
-      "fromCache": true
+      "fromCache": false
     }
   ]
 }
