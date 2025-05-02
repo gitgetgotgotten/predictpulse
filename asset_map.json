@@ -23,12 +23,12 @@
     {
       "url": "/predictpulse/assets/index-.*.js",
       "type": "script",
-      "fromCache": false
+      "fromCache": true
     },
     {
       "url": "/predictpulse/assets/index-.*.css",
       "type": "style",
-      "fromCache": true
+      "fromCache": false
     }
   ],
   "ProductList": [
@@ -60,7 +60,7 @@
     {
       "url": "/predictpulse/assets/index-.*.css",
       "type": "style",
-      "fromCache": true
+      "fromCache": false
     }
   ],
   "ProductDetails": [
@@ -92,7 +92,7 @@
     {
       "url": "/predictpulse/assets/index-.*.css",
       "type": "style",
-      "fromCache": false
+      "fromCache": true
     }
   ],
   "About": [
@@ -124,7 +124,7 @@
     {
       "url": "/predictpulse/assets/index-.*.css",
       "type": "style",
-      "fromCache": false
+      "fromCache": true
     }
   ],
   "Contact": [
@@ -151,7 +151,7 @@
     {
       "url": "/predictpulse/assets/index-.*.js",
       "type": "script",
-      "fromCache": false
+      "fromCache": true
     },
     {
       "url": "/predictpulse/assets/index-.*.css",
