@@ -19,16 +19,6 @@
       "url": "/predictpulse/assets/font.woff2",
       "type": "font",
       "fromCache": false
-    },
-    {
-      "url": "/predictpulse/assets/index-.*.js",
-      "type": "script",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/index-.*.css",
-      "type": "style",
-      "fromCache": false
     }
   ],
   "ProductList": [
@@ -51,16 +41,6 @@
       "url": "/predictpulse/assets/font.woff2",
       "type": "font",
       "fromCache": false
-    },
-    {
-      "url": "/predictpulse/assets/index-.*.js",
-      "type": "script",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/index-.*.css",
-      "type": "style",
-      "fromCache": true
     }
   ],
   "ProductDetails": [
@@ -83,16 +63,6 @@
       "url": "/predictpulse/assets/font.woff2",
       "type": "font",
       "fromCache": false
-    },
-    {
-      "url": "/predictpulse/assets/index-.*.js",
-      "type": "script",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/index-.*.css",
-      "type": "style",
-      "fromCache": true
     }
   ],
   "About": [
@@ -115,16 +85,6 @@
       "url": "/predictpulse/assets/font.woff2",
       "type": "font",
       "fromCache": false
-    },
-    {
-      "url": "/predictpulse/assets/index-.*.js",
-      "type": "script",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/index-.*.css",
-      "type": "style",
-      "fromCache": true
     }
   ],
   "Contact": [
@@ -147,16 +107,6 @@
       "url": "/predictpulse/assets/font.woff2",
       "type": "font",
       "fromCache": false
-    },
-    {
-      "url": "/predictpulse/assets/index-.*.js",
-      "type": "script",
-      "fromCache": false
-    },
-    {
-      "url": "/predictpulse/assets/index-.*.css",
-      "type": "style",
-      "fromCache": true
     }
   ]
 }
