@@ -14,7 +14,11 @@
     "ProductList"
   ],
   "next_page": [
-    "Unknown"
+    "About",
+    "Contact",
+    "Home",
+    "ProductDetails",
+    "ProductList"
   ],
   "device": [
     "Mac",
