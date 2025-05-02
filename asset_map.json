@@ -28,7 +28,7 @@
     {
       "url": "/predictpulse/assets/index-.*.css",
       "type": "style",
-      "fromCache": false
+      "fromCache": true
     }
   ],
   "ProductList": [
@@ -55,7 +55,7 @@
     {
       "url": "/predictpulse/assets/index-.*.js",
       "type": "script",
-      "fromCache": true
+      "fromCache": false
     },
     {
       "url": "/predictpulse/assets/index-.*.css",
@@ -124,7 +124,7 @@
     {
       "url": "/predictpulse/assets/index-.*.css",
       "type": "style",
-      "fromCache": true
+      "fromCache": false
     }
   ],
   "Contact": [
