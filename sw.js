@@ -1,5 +1,4 @@
-// public/sw.js
-const CACHE_NAME = 'predictpulse-cache-v1';
+const CACHE_NAME = 'predictpulse-cache-v2';
 const urlsToCache = [
   '/predictpulse/assets/fonts.css',
   '/predictpulse/assets/utils.js',
@@ -21,17 +20,12 @@ self.addEventListener('install', event => {
 self.addEventListener('fetch', event => {
   event.respondWith(
     caches.match(event.request)
-      .then(response => {
-        if (response) return response;
-        return fetch(event.request).then(response => {
-          if (!response || response.status !== 200 || response.type !== 'basic') {
-            return response;
-          }
+      .then(response => response || fetch(event.request).then(response => {
+        if (response.status === 200 && response.type === 'basic') {
           const responseToCache = response.clone();
-          caches.open(CACHE_NAME)
-            .then(cache => cache.put(event.request, responseToCache));
-          return response;
-        });
-      })
+          caches.open(CACHE_NAME).then(cache => cache.put(event.request, responseToCache));
+        }
+        return response;
+      }))
   );
 });
