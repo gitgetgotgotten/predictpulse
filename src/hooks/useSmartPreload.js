@@ -1,46 +1,58 @@
-import {useEffect} from 'react';
+import {useEffect, useRef} from 'react';
 import {predictAssets} from '../utils/predictAssets';
 
-/**
- * Hook to preload assets for a page
- * @param {string} pageName - The current page name
- */
 export function useSmartPreload(pageName) {
-  const cleanupPreloadLinks = () => {
-    const links = document.querySelectorAll('link[rel="preload"], link[rel="prefetch"]');
-    links.forEach(link => link.remove());
-  };
+  const lastPageRef = useRef(null);
 
   useEffect(() => {
-    // Remove any existing preload/prefetch links
-    cleanupPreloadLinks();
+    // Skip if we're preloading for the same page again
+    if (lastPageRef.current === pageName) {
+      return;
+    }
 
-    let isMounted = true;
-    const preloadAssets = async () => {
-      const assets = await predictAssets(pageName);
-      if (!isMounted) return;
-      assets.forEach(asset => {
-        const {type, url, priority, as, crossOrigin, delay = 0} = asset;
+    lastPageRef.current = pageName;
 
-        setTimeout(() => {
-          if (!isMounted) return;
-          const link = document.createElement('link');
-          link.rel = type;
-          link.href = url;
+    const preloadAssets = () => {
+      // Reset the prediction run flag before calling predictAssets
+      window.__predictAssetsRun = false;
 
-          if (as) link.setAttribute('as', as);
-          if (crossOrigin) link.crossOrigin = crossOrigin;
+      const assets = predictAssets(pageName);
+      const seen = new Set();
 
-          document.head.appendChild(link);
-        }, delay);
+      // Filter out any duplicates to ensure we don't double-preload
+      const uniqueAssets = assets.filter(asset => {
+        const key = `${asset.url}:${asset.type}`;
+        if (seen.has(key)) return false;
+        seen.add(key);
+        return true;
+      });
+
+      // Only preload high-priority assets (images and scripts)
+      uniqueAssets.forEach(asset => {
+        if (asset.as !== 'image' && asset.as !== 'script') return;
+
+        // Check if this asset already has a preload link
+        const existingLink = document.querySelector(`link[rel="preload"][href="${asset.url}"]`);
+        if (existingLink) return;
+
+        const link = document.createElement('link');
+        link.rel = 'preload';
+        link.href = asset.url;
+        if (asset.as) link.setAttribute('as', asset.as);
+        link.setAttribute('fetchpriority', asset.as === 'script' ? 'high' : 'low');
+        // Tag preload links for identification
+        link.dataset.smartpreload = pageName;
+        document.head.appendChild(link);
       });
     };
+
     preloadAssets();
 
-    // Clean up when navigating away
     return () => {
-      isMounted = false;
-      cleanupPreloadLinks();
+      // Clean up only the preload links created by this hook instance
+      document.querySelectorAll(`link[rel="preload"][data-smartpreload="${pageName}"]`).forEach(link => {
+        link.remove();
+      });
     };
   }, [pageName]);
 }

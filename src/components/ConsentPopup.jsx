@@ -14,7 +14,7 @@ export default function ConsentPopup() {
   return (
     <div style={{
       position: 'fixed',
-      bottom: 0,
+      bottom: '33px',
       left: 0,
       right: 0,
       background: '#fff',
@@ -35,7 +35,10 @@ export default function ConsentPopup() {
       </button>
       <button
         style={{padding: '5px 15px'}}
-        onClick={() => navigate('/exit')}
+        onClick={() => {
+          setShow(false)
+          navigate('/predictpulse/exit')
+        }}
       >
         Disagree
       </button>

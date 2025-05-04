@@ -1,31 +1,55 @@
-export function predictNextPage(hour, device_encoded, os_encoded, browser_encoded, screen_width, current_page_encoded, prev_page_encoded) {
-  if (current_page_encoded == 3) {
-    if (os_encoded == 2) {
-      if (device_encoded == 0) {
-        return 'About';
+export function predictNextPage(data) {
+if (data['page'] <= 3.5) {
+  if (data['page'] <= 1.5) {
+    if (data['page'] <= 0.5) {
+      if (data['loadTime'] <= 152.48853302001953) {
+        return 'Contact';
       } else {
-        return 'ProductList';
+        if (data['screenWidth'] <= 1403.0) {
+          return 'Contact';
+        } else {
+          return 'Home';
+        }
       }
     } else {
-      return 'Contact';
-    }
-  } else {
-    if (prev_page_encoded == 0) {
-      return 'Home';
-    } else {
-      if (screen_width <= 1680.00) {
-        return 'ProductDetails';
+      if (data['loadTime'] <= 132.1871109008789) {
+        return 'Home';
       } else {
-        if (device_encoded == 0) {
-          if (os_encoded == 1) {
-            return 'ProductDetails';
-          } else {
-            return 'Home';
-          }
+        if (data['loadTime'] <= 195.63497161865234) {
+          return 'Home';
         } else {
-          return 'ProductDetails';
+          return 'Home';
         }
       }
     }
+  } else {
+    if (data['page'] <= 2.5) {
+      if (data['loadTime'] <= 105.62291717529297) {
+        return 'About';
+      } else {
+        if (data['prev_page'] <= 1.5) {
+          return 'ProductList';
+        } else {
+          return 'ProductList';
+        }
+      }
+    } else {
+      if (data['loadTime'] <= 163.8321990966797) {
+        return 'About';
+      } else {
+        return 'Home';
+      }
+    }
   }
+} else {
+  if (data['loadTime'] <= 199.06356048583984) {
+    if (data['loadTime'] <= 107.90646362304688) {
+      return 'ProductDetails';
+    } else {
+      return 'ProductDetails';
+    }
+  } else {
+    return 'ProductDetails';
+  }
+}
 }

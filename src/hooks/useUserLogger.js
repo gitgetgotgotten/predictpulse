@@ -1,107 +1,112 @@
-// src/hooks/useUserLogger.js
-import {useEffect} from 'react';
-import {UAParser} from 'ua-parser-js';
-import {filterPageAssets} from '../utils/predictAssets';
-import {openDB} from 'idb';
+import {useEffect, useRef} from 'react';
+import {openDB} from '../utils/db';
+import {v4 as uuidv4} from 'uuid';
 
-export function useUserLogger(pageName) {
-  useEffect(() => {
-    if (!localStorage.getItem('consent')) return;
+let uploadTimeout = null;
+let lastLogTime = 0;
 
-    const navPath = JSON.parse(sessionStorage.getItem('nav_path') || '[]');
-    if (navPath.length === 0 || navPath[navPath.length - 1] !== pageName) {
-      navPath.push(pageName);
-      if (navPath.length > 2) navPath.shift();
-      sessionStorage.setItem('nav_path', JSON.stringify(navPath));
+export function useUserLogger(page) {
+  const isLogging = useRef(false);
+  const lastLoggedPage = useRef(null);
+  const assetsRef = useRef([]);
+
+  const uploadLogs = async () => {
+    try {
+      const db = await openDB('predictpulse_logs', 1);
+      const newLogs = await db.getAll('logs');
+      console.info(`[useUserLogger] Retrieved ${newLogs.length} logs from IndexedDB`);
+      if (newLogs.length === 0) return;
+
+      const response = await fetch('https://predictpulse-server.vercel.app/api/upload-logs', {
+        method: 'POST',
+        headers: {'Content-Type': 'application/json'},
+        body: JSON.stringify(newLogs)
+      });
+
+      if (!response.ok) {
+        throw new Error(`Server error: ${response.status}`);
+      }
+
+      await db.clear('logs');
+      console.info(`[useUserLogger] Uploaded ${newLogs.length} logs to server`);
+    } catch (error) {
+      console.error('[useUserLogger] Error uploading logs:', error);
     }
-
-    const loggingTimeout = setTimeout(() => {
-      logPageVisit(pageName, navPath);
-    }, 1000);
-
-    return () => clearTimeout(loggingTimeout);
-  }, [pageName]);
-}
-
-async function logPageVisit(pageName, navPath) {
-  console.log(`Logging for page: ${pageName}`);
-  const parser = new UAParser();
-  const uaResult = parser.getResult();
-  const visitId = `${pageName}-${new Date().toISOString()}`;
-  const resources = performance.getEntriesByType('resource').map(entry => ({
-    url: entry.name,
-    fromCache: entry.transferSize === 0 || entry.decodedBodySize === 0 || entry.initiatorType === 'link',
-    transferSize: entry.transferSize,
-    decodedBodySize: entry.decodedBodySize
-  }));
-  const assets = filterPageAssets(pageName, resources);
-  const navEntry = performance.getEntriesByType('navigation')[0];
-  const loadTime = navEntry ? navEntry.domContentLoadedEventEnd - navEntry.startTime : 100;
-
-  const logEntry = {
-    time: new Date().toISOString(),
-    page: pageName,
-    visitId,
-    userAgent: navigator.userAgent,
-    device: uaResult.device.type || 'desktop',
-    os: uaResult.os.name || 'Unknown',
-    browser: uaResult.browser.name || 'Unknown',
-    assets,
-    navPath: [...navPath],
-    screen: {width: window.innerWidth, height: window.innerHeight},
-    loadTime
   };
 
-  const db = await openDB('predictpulse_logs', 1, {
-    upgrade(db) {
-      db.createObjectStore('logs', {keyPath: 'visitId'});
-    }
-  });
-  await db.put('logs', logEntry);
+  const scheduleUpload = () => {
+    const now = Date.now();
+    lastLogTime = now;
+    if (uploadTimeout) clearTimeout(uploadTimeout);
+    uploadTimeout = setTimeout(() => {
+      if (now === lastLogTime) uploadLogs();
+    }, 8000);
+  };
 
-  // Upload to GitHub
-  try {
-    const repoUrl = 'https://api.github.com/repos/gitgetgotgotten/predictpulse-data/contents/predictpulse_realdata.json';
-    // Fetch existing logs
-    let existingLogs = [];
-    let sha;
-    try {
-      const getResponse = await fetch(repoUrl, {
-        headers: {
-          'Authorization': `Bearer ${localStorage.getItem('github_token')}`
+  useEffect(() => {
+    let observer = null;
+    let paintObserver = null;
+
+    const logVisit = async () => {
+      if (!localStorage.getItem('consent') || isLogging.current || lastLoggedPage.current === page) return;
+      isLogging.current = true;
+      lastLoggedPage.current = page;
+
+      const sessionId = sessionStorage.getItem('sessionId') || uuidv4();
+      sessionStorage.setItem('sessionId', sessionId);
+      let navPath = JSON.parse(sessionStorage.getItem('navPath') || '[]');
+      if (navPath[navPath.length - 1] !== page) navPath.push(page);
+      sessionStorage.setItem('navPath', JSON.stringify(navPath));
+
+      assetsRef.current = [];
+      paintObserver = new PerformanceObserver((list) => {
+        for (const entry of list.getEntries()) {
+          if (entry.name === 'first-contentful-paint') assetsRef.current.push({url: 'fcp', type: 'paint'});
         }
       });
-      if (getResponse.ok) {
-        const data = await getResponse.json();
-        existingLogs = JSON.parse(atob(data.content));
-        sha = data.sha;
-      }
-    } catch (error) {
-      if (error.status !== 404) {
-        console.error('Failed to fetch existing logs:', error);
-      }
-    }
+      paintObserver.observe({entryTypes: ['paint']});
 
-    // Append new log
-    const updatedLogs = [...existingLogs, logEntry];
-    const response = await fetch(repoUrl, {
-      method: 'PUT',
-      headers: {
-        'Authorization': `Bearer ${localStorage.getItem('github_token')}`,
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        message: `Append log from ${navigator.userAgent.slice(0, 50)}`,
-        content: btoa(JSON.stringify(updatedLogs)),
-        branch: 'data',
-        sha // Include sha for updates
-      })
-    });
-    if (response.ok) {
-      console.log('Log uploaded to GitHub:', visitId);
-      await db.delete('logs', visitId);
-    }
-  } catch (error) {
-    console.error('Failed to upload log:', error);
-  }
+      observer = new PerformanceObserver((list) => {
+        list.getEntries().forEach(entry => {
+          if (['img', 'script', 'link', 'font'].includes(entry.initiatorType)) {
+            assetsRef.current.push({
+              url: entry.name.replace('https://gitgetgotgotten.github.io', ''),
+              type: entry.initiatorType,
+              fromCache: entry.transferSize === 0
+            });
+          }
+        });
+        if (assetsRef.current.length > 50) {
+          observer.disconnect();
+        }
+      });
+      observer.observe({entryTypes: ['resource']});
+
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      const navTiming = performance.getEntriesByType('navigation')[0];
+      const loadTime = navTiming ? navTiming.duration : 100;
+
+      const logEntry = {
+        visitId: `${sessionId}-${uuidv4()}`,
+        page,
+        timestamp: new Date().toISOString(),
+        userAgent: navigator.userAgent,
+        navPath,
+        assets: assetsRef.current,
+        screenWidth: window.innerWidth,
+        loadTime
+      };
+
+      const db = await openDB('predictpulse_logs', 1);
+      await db.put('logs', logEntry);
+      scheduleUpload();
+      isLogging.current = false;
+    };
+
+    logVisit();
+    return () => {
+      if (observer) observer.disconnect();
+      if (paintObserver) paintObserver.disconnect();
+    };
+  }, [page]);
 }

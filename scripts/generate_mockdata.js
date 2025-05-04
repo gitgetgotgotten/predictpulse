@@ -1,8 +1,7 @@
-// scripts/generate_mockdata.js
 import fs from 'fs';
-import {UAParser} from "ua-parser-js";
+import {v4 as uuidv4} from 'uuid';
 
-function generateMockData(visits = 50) {
+function generateMockData(visits = 200) {
   const transitionProbs = {
     'Home': {'ProductList': 0.6, 'About': 0.3, 'Contact': 0.1},
     'ProductList': {'ProductDetails': 0.7, 'Home': 0.2, 'About': 0.1},
@@ -16,28 +15,31 @@ function generateMockData(visits = 50) {
     'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1',
     'Mozilla/5.0 (X11; Linux x86_64; rv:129.0) Gecko/20100101 Firefox/129.0'
   ];
-  const devices = ['desktop', 'mobile', 'tablet'];
-  const oses = ['Windows', 'Mac OS', 'iOS', 'Linux'];
-  const browsers = ['Chrome', 'Safari', 'Firefox'];
-  const screenSizes = [
-    {width: 1920, height: 1080},
-    {width: 1366, height: 768},
-    {width: 375, height: 667},
-    {width: 1440, height: 900}
+  // Realistic screen widths based on device types
+  const screenWidths = [
+    1920, // Desktop
+    1366, // Laptop
+    375,  // Mobile
+    1440, // Desktop
+    768,  // Tablet
+    412,  // Mobile
+    2560  // High-res desktop
   ];
   const assets = {
-    Home: ['page1.jpg', 'styles.css', 'fonts.css', 'font.woff2', 'utils.js'],
-    ProductList: ['page2.jpg', 'styles.css', 'fonts.css', 'font.woff2', 'utils.js'],
-    ProductDetails: ['page3.jpg', 'styles.css', 'fonts.css', 'font.woff2', 'utils.js'],
-    About: ['page4.jpg', 'styles.css', 'fonts.css', 'font.woff2', 'utils.js'],
-    Contact: ['page5.jpg', 'styles.css', 'fonts.css', 'font.woff2', 'utils.js']
+    Home: ['page1.jpg', 'fonts.css', 'utils.js', 'font.woff2', 'index-.*.js', 'index-.*.css'],
+    ProductList: ['page2.jpg', 'fonts.css', 'utils.js', 'font.woff2', 'index-.*.js', 'index-.*.css'],
+    ProductDetails: ['page3.jpg', 'fonts.css', 'utils.js', 'font.woff2', 'index-.*.js', 'index-.*.css'],
+    About: ['page4.jpg', 'fonts.css', 'utils.js', 'font.woff2', 'index-.*.js', 'index-.*.css'],
+    Contact: ['page5.jpg', 'fonts.css', 'utils.js', 'font.woff2', 'index-.*.js', 'index-.*.css']
   };
   const logs = [];
   let currentPage = 'Home';
+  let navPath = ['Home'];
+  const sessionId = uuidv4();
+
   for (let i = 0; i < visits; i++) {
-    const prevPage = currentPage;
     const probs = transitionProbs[currentPage];
-    const rand = Math.random();
+    let rand = Math.random();
     let cumulative = 0;
     for (const [nextPage, prob] of Object.entries(probs)) {
       cumulative += prob;
@@ -46,29 +48,28 @@ function generateMockData(visits = 50) {
         break;
       }
     }
+    navPath.push(currentPage);
     const userAgent = userAgents[Math.floor(Math.random() * userAgents.length)];
-    const parser = new UAParser(userAgent);
-    const uaResult = parser.getResult();
+    // Simulate realistic load times (e.g., mobile slower, desktop faster)
+    const isMobile = screenWidths[Math.floor(Math.random() * screenWidths.length)] <= 768;
+    const loadTime = isMobile ? 100 + Math.random() * 400 : 50 + Math.random() * 200;
     logs.push({
-      time: new Date(Date.now() + i * 6000).toISOString(),
+      visitId: `${sessionId}-${uuidv4()}`,
       page: currentPage,
-      visitId: `${currentPage}-${new Date(Date.now() + i * 6000).toISOString()}`,
+      timestamp: new Date(Date.now() + i * 6000).toISOString(),
       userAgent,
-      device: devices[Math.floor(Math.random() * devices.length)],
-      os: uaResult.os.name || oses[Math.floor(Math.random() * oses.length)],
-      browser: uaResult.browser.name || browsers[Math.floor(Math.random() * browsers.length)],
+      navPath: [...navPath],
       assets: assets[currentPage].map(url => ({
         url: `/predictpulse/assets/${url}`,
-        type: url.endsWith('.jpg') ? 'img' : (url.endsWith('.css') ? 'style' : (url.endsWith('.js') ? 'script' : 'other')),
-        fromCache: false
+        type: url.endsWith('.jpg') ? 'img' : url.endsWith('.css') ? 'style' : url.endsWith('.js') ? 'script' : 'font',
+        fromCache: Math.random() > 0.3
       })),
-      navPath: [prevPage, currentPage],
-      screen: screenSizes[Math.floor(Math.random() * screenSizes.length)],
-      loadTime: 50 + Math.random() * 200
+      screenWidth: screenWidths[Math.floor(Math.random() * screenWidths.length)],
+      loadTime
     });
   }
   fs.writeFileSync('predictpulse_mockdata.json', JSON.stringify(logs, null, 2));
   console.log(`Generated ${visits} mock visits.`);
 }
 
-generateMockData(50);
+generateMockData(200);

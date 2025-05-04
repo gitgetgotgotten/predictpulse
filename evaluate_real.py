@@ -15,7 +15,7 @@ except Exception as e:
     print(f"Failed to load model or encoders: {e}")
     exit(1)
 
-with open('predictpulse_mockdata.json', 'r') as f:
+with open('predictpulse_realdata.json', 'r') as f:
     data = json.load(f)
 
 # Validate data
@@ -100,7 +100,7 @@ f1 = f1_score(y_true, y_pred, average='weighted', zero_division=0)
 cache_hit_rate = sum(cache_hits) / len(cache_hits)
 resource_efficiency = cache_hit_rate * 100
 
-with open('evaluation_results.json', 'w') as f:
+with open('evaluation_results_real.json', 'w') as f:
     json.dump({
         'accuracy': accuracy,
         'load_time_avg': sum(load_times) / len(load_times),

@@ -4,9 +4,20 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PredictPulse</title>
+  <link rel="stylesheet" href="/predictpulse/assets/fonts.css">
 </head>
 <body>
   <div id="root"></div>
   <script type="module" src="/src/main.jsx"></script>
+  <script src="/predictpulse/assets/utils.js"></script>
+  <script>
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/predictpulse/sw.js')
+        .then(reg => console.log('[ServiceWorker] Registered with scope:', reg.scope))
+        .catch(err => console.error('[ServiceWorker] Registration failed:', err.message, err));
+    } else {
+      console.warn('[ServiceWorker] Not supported in this browser');
+    }
+  </script>
 </body>
 </html>

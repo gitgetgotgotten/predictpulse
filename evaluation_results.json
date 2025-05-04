@@ -1,8 +1,0 @@
-{
-  "accuracy": 0.673469387755102,
-  "load_time_avg": 155.88988956292368,
-  "resource_efficiency": 0.0,
-  "precision": 0.6664347557204701,
-  "recall": 0.673469387755102,
-  "cache_hit_rate": 0.0
-}
