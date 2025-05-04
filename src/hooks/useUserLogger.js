@@ -17,7 +17,7 @@ export function useUserLogger(page) {
       console.info(`[useUserLogger] Retrieved ${newLogs.length} logs from IndexedDB`);
       if (newLogs.length === 0) return;
 
-      const response = await fetch('https://server-two-gamma-86.vercel.app/api/upload-logs', {
+      const response = await fetch('https://server-i5rn4qres-alis-projects-bdb60a7c.vercel.app/api/upload-logs', {
         method: 'POST',
         headers: {'Content-Type': 'application/json'},
         body: JSON.stringify(newLogs)
