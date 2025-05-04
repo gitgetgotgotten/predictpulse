@@ -49,7 +49,6 @@ app.post('/api/upload-logs', async (req, res) => {
       branch: 'data'
     };
 
-    // Only include sha if the file already exists
     if (sha) {
       commitData.sha = sha;
     }
