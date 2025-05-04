@@ -48,7 +48,11 @@ app.post('/api/upload-logs', async (req, res) => {
       content: Buffer.from(JSON.stringify(updatedLogs, null, 2)).toString('base64'),
       branch: 'data'
     };
-    if (sha) commitData.sha = sha; // Only include sha if it exists
+
+    // Only include sha if the file already exists
+    if (sha) {
+      commitData.sha = sha;
+    }
 
     await octokit.repos.createOrUpdateFileContents(commitData);
 
