@@ -1,7 +1,12 @@
 const express = require('express');
 const {Octokit} = require('@octokit/rest');
+const cors = require('cors'); // Add cors
 const app = express();
 
+// Enable CORS for the client origin
+app.use(cors({
+  origin: 'https://gitgetgotgotten.github.io'
+}));
 app.use(express.json());
 
 const octokit = new Octokit({auth: process.env.GITHUB_TOKEN});
