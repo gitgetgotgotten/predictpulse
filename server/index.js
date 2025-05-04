@@ -1,12 +1,12 @@
 const express = require('express');
-const {Octokit} = require('@octokit/rest');
+const { Octokit } = require('@octokit/rest');
 const cors = require('cors');
 const app = express();
 
-app.use(cors({origin: 'https://gitgetgotgotten.github.io'}));
+app.use(cors({ origin: 'https://gitgetgotgotten.github.io' }));
 app.use(express.json());
 
-const octokit = new Octokit({auth: process.env.GITHUB_TOKEN});
+const octokit = new Octokit({ auth: process.env.GITHUB_TOKEN });
 
 app.post('/api/upload-logs', async (req, res) => {
   try {
@@ -18,8 +18,9 @@ app.post('/api/upload-logs', async (req, res) => {
 
     let existingLogs = [];
     let sha = null;
+    let fileExists = false;
     try {
-      const {data} = await octokit.repos.getContent({
+      const { data } = await octokit.repos.getContent({
         owner: 'gitgetgotgotten',
         repo: 'predictpulse-data',
         path: 'predictpulse_realdata.json',
@@ -27,6 +28,7 @@ app.post('/api/upload-logs', async (req, res) => {
       });
       existingLogs = JSON.parse(Buffer.from(data.content, 'base64').toString());
       sha = data.sha;
+      fileExists = true;
     } catch (error) {
       if (error.status === 404) {
         console.warn('predictpulse_realdata.json not found, initializing empty array');
@@ -49,7 +51,7 @@ app.post('/api/upload-logs', async (req, res) => {
       branch: 'data'
     };
 
-    if (sha) {
+    if (fileExists && sha) {
       commitData.sha = sha;
     }
 
