@@ -1,23 +1,30 @@
 {
-  "page": [
-    "About",
-    "Contact",
-    "Home",
-    "ProductDetails",
-    "ProductList"
-  ],
-  "prev_page": [
-    "About",
-    "Contact",
-    "Home",
-    "ProductDetails",
-    "ProductList"
-  ],
   "next_page": [
     "About",
     "Contact",
     "Home",
     "ProductDetails",
     "ProductList"
+  ],
+  "ohe_categories": [
+    [
+      "About",
+      "Contact",
+      "Home",
+      "ProductDetails",
+      "ProductList"
+    ],
+    [
+      "About",
+      "Contact",
+      "Home",
+      "ProductDetails",
+      "ProductList"
+    ],
+    [
+      "Mac",
+      "Other",
+      "iPhone"
+    ]
   ]
 }
