@@ -50,7 +50,7 @@ def encode_features(df):
     df['next_page'] = encoders['next_page'].fit_transform(df['next_page'])
     # One-hot encoding for page, prev_page, device_type
     categorical_cols = ['page', 'prev_page', 'device_type']
-    ohe = OneHotEncoder(sparse=False, handle_unknown='ignore')
+    ohe = OneHotEncoder(sparse_output=False, handle_unknown='ignore')  # Changed sparse to sparse_output
     encoded_cols = pd.DataFrame(ohe.fit_transform(df[categorical_cols]), columns=ohe.get_feature_names_out(categorical_cols))
     df = pd.concat([df.drop(categorical_cols, axis=1).reset_index(drop=True), encoded_cols.reset_index(drop=True)], axis=1)
     encoders['ohe'] = ohe
@@ -83,7 +83,9 @@ def train_model(df):
     if df.empty:
         print("Empty DataFrame for training")
         return None, None
-    features = [col for col in df.columns if col not in ['next_page', 'timestamp', 'userAgent', 'navPath', 'assets']]
+    # Explicitly select numeric and relevant features
+    features = ['hour', 'screenWidth', 'loadTime', 'asset_count', 'has_image'] + \
+               [col for col in df.columns if col.startswith('page_') or col.startswith('prev_page_') or col.startswith('device_type_')]
     df = df.dropna(subset=features + ['next_page'])
     if df.empty:
         print("No valid training data")
@@ -104,7 +106,7 @@ def main():
         with open('public/encoders.json', 'w') as f:
             json.dump({
                 'next_page': list(encoders['next_page'].classes_),
-                'ohe_categories': encoders['ohe'].categories_
+                'ohe_categories': [list(cat) for cat in encoders['ohe'].categories_]
             }, f, indent=2)
         generate_js_model(clf, encoders, features)
 
