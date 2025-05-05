@@ -1,5 +1,6 @@
 {
   "next_page": [
+    "About",
     "Contact",
     "Home",
     "ProductDetails",
@@ -8,18 +9,22 @@
   "ohe_categories": [
     [
       "About",
-      "Home",
-      "ProductDetails",
-      "ProductList"
-    ],
-    [
       "Contact",
       "Home",
       "ProductDetails",
       "ProductList"
     ],
     [
-      "Other"
+      "About",
+      "Contact",
+      "Home",
+      "ProductDetails",
+      "ProductList"
+    ],
+    [
+      "Mac",
+      "Other",
+      "iPhone"
     ]
   ]
 }

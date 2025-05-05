@@ -1,129 +1,17 @@
 {
-  "Home": [
-    {
-      "url": "/predictpulse/assets/page1.jpg",
-      "type": "img",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/fonts.css",
-      "type": "style",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/utils.js",
-      "type": "script",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/font.woff2",
-      "type": "font",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/index-.*.js",
-      "type": "script",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/index-.*.css",
-      "type": "style",
-      "fromCache": false
-    }
-  ],
+  "Home": [],
   "ProductList": [
     {
       "url": "/predictpulse/assets/page2.jpg",
       "type": "img",
       "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/fonts.css",
-      "type": "style",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/utils.js",
-      "type": "script",
-      "fromCache": false
-    },
-    {
-      "url": "/predictpulse/assets/font.woff2",
-      "type": "font",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/index-.*.js",
-      "type": "script",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/index-.*.css",
-      "type": "style",
-      "fromCache": true
     }
   ],
-  "ProductDetails": [
-    {
-      "url": "/predictpulse/assets/page3.jpg",
-      "type": "img",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/fonts.css",
-      "type": "style",
-      "fromCache": false
-    },
-    {
-      "url": "/predictpulse/assets/utils.js",
-      "type": "script",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/font.woff2",
-      "type": "font",
-      "fromCache": false
-    },
-    {
-      "url": "/predictpulse/assets/index-.*.js",
-      "type": "script",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/index-.*.css",
-      "type": "style",
-      "fromCache": true
-    }
-  ],
+  "ProductDetails": [],
   "About": [
     {
       "url": "/predictpulse/assets/page4.jpg",
       "type": "img",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/fonts.css",
-      "type": "style",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/utils.js",
-      "type": "script",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/font.woff2",
-      "type": "font",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/index-.*.js",
-      "type": "script",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/index-.*.css",
-      "type": "style",
       "fromCache": true
     }
   ],
@@ -131,31 +19,6 @@
     {
       "url": "/predictpulse/assets/page5.jpg",
       "type": "img",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/fonts.css",
-      "type": "style",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/utils.js",
-      "type": "script",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/font.woff2",
-      "type": "font",
-      "fromCache": true
-    },
-    {
-      "url": "/predictpulse/assets/index-.*.js",
-      "type": "script",
-      "fromCache": false
-    },
-    {
-      "url": "/predictpulse/assets/index-.*.css",
-      "type": "style",
       "fromCache": true
     }
   ]

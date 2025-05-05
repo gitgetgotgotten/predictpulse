@@ -1,3 +1,4 @@
+
 const CACHE_NAME = 'predictpulse-cache-v2';
 const urlsToCache = [
   '/predictpulse/assets/fonts.css',
@@ -7,7 +8,9 @@ const urlsToCache = [
   '/predictpulse/assets/page2.jpg',
   '/predictpulse/assets/page3.jpg',
   '/predictpulse/assets/page4.jpg',
-  '/predictpulse/assets/page5.jpg'
+  '/predictpulse/assets/page5.jpg',
+  '/predictpulse/assets/index-Dhup7eJJ.js',
+  '/predictpulse/assets/index-CPeIIt-n.css'
 ];
 
 self.addEventListener('install', event => {
