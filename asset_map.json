@@ -1,5 +1,11 @@
 {
-  "Home": [],
+  "Home": [
+    {
+      "url": "/predictpulse/assets/page1.jpg",
+      "type": "img",
+      "fromCache": true
+    }
+  ],
   "ProductList": [
     {
       "url": "/predictpulse/assets/page2.jpg",
@@ -15,11 +21,5 @@
       "fromCache": true
     }
   ],
-  "Contact": [
-    {
-      "url": "/predictpulse/assets/page5.jpg",
-      "type": "img",
-      "fromCache": true
-    }
-  ]
+  "Contact": []
 }
