@@ -10,16 +10,28 @@
     {
       "url": "/predictpulse/assets/page2.jpg",
       "type": "img",
-      "fromCache": true
+      "fromCache": false
     }
   ],
-  "ProductDetails": [],
+  "ProductDetails": [
+    {
+      "url": "/predictpulse/assets/page3.jpg",
+      "type": "img",
+      "fromCache": false
+    }
+  ],
   "About": [
     {
       "url": "/predictpulse/assets/page4.jpg",
       "type": "img",
-      "fromCache": true
+      "fromCache": false
     }
   ],
-  "Contact": []
+  "Contact": [
+    {
+      "url": "/predictpulse/assets/page5.jpg",
+      "type": "img",
+      "fromCache": false
+    }
+  ]
 }
