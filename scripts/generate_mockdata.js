@@ -1,5 +1,5 @@
-import { writeFileSync } from 'fs';
-import { v4 as uuidv4 } from 'uuid';
+import {writeFileSync} from 'fs';
+import {v4 as uuidv4} from 'uuid';
 
 function generateMockData(numVisits) {
   const pages = ['Home', 'About', 'Contact', 'ProductList', 'ProductDetails'];
@@ -13,12 +13,12 @@ function generateMockData(numVisits) {
     'Mobile Safari': 'Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 Mobile/15E148 Safari/604.1'
   };
   const assets = [
-    { url: '/predictpulse/assets/page{pageNum}.jpg', type: 'img', fromCache: false },
-    { url: '/predictpulse/assets/fonts.css', type: 'style', fromCache: true },
-    { url: '/predictpulse/assets/utils.js', type: 'script', fromCache: true },
-    { url: '/predictpulse/assets/font.woff2', type: 'font', fromCache: true },
-    { url: '/predictpulse/assets/index-.*.js', type: 'script', fromCache: false },
-    { url: '/predictpulse/assets/index-.*.css', type: 'style', fromCache: true }
+    {url: '/predictpulse/assets/page{pageNum}.jpg', type: 'img', fromCache: false},
+    {url: '/predictpulse/assets/fonts.css', type: 'style', fromCache: true},
+    {url: '/predictpulse/assets/utils.js', type: 'script', fromCache: true},
+    {url: '/predictpulse/assets/font.woff2', type: 'font', fromCache: true},
+    {url: '/predictpulse/assets/index-.*.js', type: 'script', fromCache: false},
+    {url: '/predictpulse/assets/index-.*.css', type: 'style', fromCache: true}
   ];
 
   const visits = [];

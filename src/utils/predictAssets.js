@@ -1,4 +1,4 @@
-import { predictNextPage } from './predictNextPage';
+import {predictNextPage} from './predictNextPage';
 import assetMap from '../../public/asset_map.json';
 
 export function predictAssets(currentPage) {
@@ -15,7 +15,7 @@ export function predictAssets(currentPage) {
   const jsHash = jsScript ? jsScript.src.match(/index-(.+)\.js/)[1] : 'placeholder-js';
   const cssLink = document.querySelector('link[href*="/assets/index-"]');
   const cssHash = cssLink ? cssLink.href.match(/index-(.+)\.css/)[1] : 'placeholder-css';
-  const assetHashes = { js: jsHash, css: cssHash };
+  const assetHashes = {js: jsHash, css: cssHash};
 
   // Parse device and browser from user agent, converting to lowercase
   const userAgent = navigator.userAgent || '';
@@ -69,7 +69,7 @@ export function predictAssets(currentPage) {
       }
       if (loadedAssets.has(url) || seenUrls.has(url)) return acc;
       seenUrls.add(url);
-      acc.push({ ...asset, url, as: getAsValue(asset.type) });
+      acc.push({...asset, url, as: getAsValue(asset.type)});
       return acc;
     }, [])
     .slice(0, 6);
