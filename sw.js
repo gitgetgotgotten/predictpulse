@@ -6,7 +6,7 @@ const urlsToCache = [
   '/predictpulse/assets/fonts.css',
   '/predictpulse/assets/utils.js',
   '/predictpulse/assets/font.woff2',
-  '/predictpulse/assets/index-B8w4aN3A.js',
+  '/predictpulse/assets/index-CldoUnkq.js',
   '/predictpulse/assets/index-CPeIIt-n.css'
 ];
 
