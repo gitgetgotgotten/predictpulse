@@ -30,3 +30,10 @@ evaluation_results.json
 evaluation_results_real.json
 predictpulse_mockdata.json
 predictpulse_realdata.json
+model.joblib
+ohe_encoder.joblib
+page_encoder.joblib
+scaler.joblib
+feature_names.joblib
+transition_freq.joblib
+train_results.json

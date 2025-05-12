@@ -1,13 +1,19 @@
 {
   "version": 2,
   "builds": [
-    { "src": "api/**/*.js", "use": "@vercel/node" }
+    {
+      "src": "api/**/*.js",
+      "use": "@vercel/node"
+    }
   ],
   "routes": [
-    { "src": "/api/health", "dest": "/api/health.js" },
-    { "src": "/api/upload-logs", "dest": "/api/upload-logs.js" },
-    { "src": "/api/debug", "dest": "/api/debug.js" },
-    { "src": "/api/debug-file", "dest": "/api/debug-file.js" },
-    { "src": "/api/create-file", "dest": "/api/create-file.js" }
+    {
+      "src": "/api/health",
+      "dest": "/api/health.js"
+    },
+    {
+      "src": "/api/upload-logs",
+      "dest": "/api/upload-logs.js"
+    }
   ]
 }

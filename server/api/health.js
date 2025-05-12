@@ -4,7 +4,6 @@ const cors = require('micro-cors')({
 });
 
 function handler(req, res) {
-  // Set CORS headers manually
   res.setHeader('Access-Control-Allow-Origin', '*');
 
   if (req.method === 'OPTIONS') {
@@ -13,11 +12,7 @@ function handler(req, res) {
     return res.status(200).end();
   }
 
-  return res.status(200).json({
-    status: 'Server is running',
-    timestamp: new Date().toISOString(),
-    environment: process.env.VERCEL_ENV || 'unknown'
-  });
+  return res.status(200).json({status: 'Server is running'});
 }
 
 module.exports = cors(handler);

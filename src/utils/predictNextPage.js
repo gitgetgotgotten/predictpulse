@@ -1,55 +1,43 @@
 export function predictNextPage(data) {
-if (data['page'] <= 3.5) {
-  if (data['page'] <= 1.5) {
-    if (data['page'] <= 0.5) {
-      if (data['loadTime'] <= 152.48853302001953) {
-        return 'Contact';
-      } else {
-        if (data['screenWidth'] <= 1403.0) {
-          return 'Contact';
-        } else {
-          return 'Home';
-        }
-      }
+  if (data['page'].toLowerCase() === 'about' || data['page'].toLowerCase() === 'contact' || data['page'].toLowerCase() === 'home' || data['page'].toLowerCase() === 'productdetails') {
+    if (data['loadTime'] <= 433.5) {
+      return 'contact';
     } else {
-      if (data['loadTime'] <= 132.1871109008789) {
-        return 'Home';
-      } else {
-        if (data['loadTime'] <= 195.63497161865234) {
-          return 'Home';
-        } else {
-          return 'Home';
-        }
-      }
+      return 'about';
     }
   } else {
-    if (data['page'] <= 2.5) {
-      if (data['loadTime'] <= 105.62291717529297) {
-        return 'About';
-      } else {
-        if (data['prev_page'] <= 1.5) {
-          return 'ProductList';
+    if (data['device'].toLowerCase() === 'iphone' || data['device'].toLowerCase() === 'mac') {
+      if (data['screenWidth'] <= 1403.0) {
+        if (data['loadTime'] <= 225.2) {
+          return 'about';
         } else {
-          return 'ProductList';
+          return 'productdetails';
+        }
+      } else {
+        if (data['loadTime'] <= 407.0) {
+          return 'productdetails';
+        } else {
+          return 'home';
         }
       }
     } else {
-      if (data['loadTime'] <= 163.8321990966797) {
-        return 'About';
+      if (data['loadTime'] <= 301.1) {
+        if (data['screenWidth'] <= 571.5) {
+          return 'productdetails';
+        } else {
+          return 'productdetails';
+        }
       } else {
-        return 'Home';
+        if (data['screenWidth'] <= 1680.0) {
+          return 'productdetails';
+        } else {
+          if (data['browser'].toLowerCase() === 'chrome') {
+            return 'home';
+          } else {
+            return 'home';
+          }
+        }
       }
     }
   }
-} else {
-  if (data['loadTime'] <= 199.06356048583984) {
-    if (data['loadTime'] <= 107.90646362304688) {
-      return 'ProductDetails';
-    } else {
-      return 'ProductDetails';
-    }
-  } else {
-    return 'ProductDetails';
-  }
-}
 }

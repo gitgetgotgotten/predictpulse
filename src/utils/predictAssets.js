@@ -1,4 +1,4 @@
-import {predictNextPage} from './predictNextPage';
+import { predictNextPage } from './predictNextPage';
 import assetMap from '../../public/asset_map.json';
 
 export function predictAssets(currentPage) {
@@ -15,13 +15,36 @@ export function predictAssets(currentPage) {
   const jsHash = jsScript ? jsScript.src.match(/index-(.+)\.js/)[1] : 'placeholder-js';
   const cssLink = document.querySelector('link[href*="/assets/index-"]');
   const cssHash = cssLink ? cssLink.href.match(/index-(.+)\.css/)[1] : 'placeholder-css';
-  const assetHashes = {js: jsHash, css: cssHash};
+  const assetHashes = { js: jsHash, css: cssHash };
+
+  // Parse device and browser from user agent, converting to lowercase
+  const userAgent = navigator.userAgent || '';
+  let device = 'unknown';
+  const userAgentLower = userAgent.toLowerCase();
+  if (userAgentLower.includes('mobile')) {
+    device = 'mobile';
+  } else if (userAgentLower.includes('tablet')) {
+    device = 'tablet';
+  } else {
+    device = 'desktop';
+  }
+  let browser = 'unknown';
+  if (userAgentLower.includes('chrome')) {
+    browser = 'chrome';
+  } else if (userAgentLower.includes('firefox')) {
+    browser = 'firefox';
+  } else if (userAgentLower.includes('safari')) {
+    browser = 'safari';
+  } else if (userAgentLower.includes('edge')) {
+    browser = 'edge';
+  }
 
   const nextPage = predictNextPage({
-    page: currentPage,
+    page: currentPage.toLowerCase(),
+    browser: browser,
+    device: device,
     screenWidth: window.innerWidth,
-    loadTime: performance.getEntriesByType('navigation')[0]?.duration || 100,
-    assetCount: 6
+    loadTime: performance.getEntriesByType('navigation')[0]?.duration || 100
   });
 
   const assets = assetMap[nextPage] || [];
@@ -46,7 +69,7 @@ export function predictAssets(currentPage) {
       }
       if (loadedAssets.has(url) || seenUrls.has(url)) return acc;
       seenUrls.add(url);
-      acc.push({...asset, url, as: getAsValue(asset.type)});
+      acc.push({ ...asset, url, as: getAsValue(asset.type) });
       return acc;
     }, [])
     .slice(0, 6);

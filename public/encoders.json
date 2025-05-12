@@ -1,23 +1,20 @@
 {
   "page": [
-    "About",
-    "Contact",
-    "Home",
-    "ProductDetails",
-    "ProductList"
+    "about",
+    "contact",
+    "home",
+    "productdetails",
+    "productlist"
   ],
-  "prev_page": [
-    "About",
-    "Contact",
-    "Home",
-    "ProductDetails",
-    "ProductList"
+  "browser": [
+    "chrome",
+    "firefox",
+    "safari",
+    "mobile safari"
   ],
-  "next_page": [
-    "About",
-    "Contact",
-    "Home",
-    "ProductDetails",
-    "ProductList"
+  "device": [
+    "iphone",
+    "mac",
+    "other"
   ]
 }
