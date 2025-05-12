@@ -46,6 +46,26 @@ export function useUserLogger(page) {
     uploadTimeout = setTimeout(() => now === lastLogTime && uploadLogs(), 8000);
   };
 
+  const parseUserAgent = (userAgent) => {
+    const ua = userAgent.toLowerCase();
+    let browser = 'unknown';
+    let device = 'unknown';
+
+    // Browser detection
+    if (ua.includes('chrome')) browser = 'chrome';
+    else if (ua.includes('firefox')) browser = 'firefox';
+    else if (ua.includes('safari') && ua.includes('mobile')) browser = 'mobile safari';
+    else if (ua.includes('safari')) browser = 'safari';
+    else if (ua.includes('edge')) browser = 'edge';
+
+    // Device detection
+    if (ua.includes('mobile')) device = 'iphone'; // Assuming mobile implies iPhone as per encoders.json
+    else if (ua.includes('macintosh')) device = 'mac';
+    else device = 'other';
+
+    return {browser, device};
+  }
+
   useEffect(() => {
     const logVisit = async () => {
       if (!localStorage.getItem('consent') || isLogging.current || lastLoggedPage.current === page) return;
@@ -75,6 +95,7 @@ export function useUserLogger(page) {
       await new Promise(resolve => setTimeout(resolve, 2000));
       observer.disconnect();
 
+      const parsedUserAgent = parseUserAgent(navigator.userAgent)
       const navTiming = performance.getEntriesByType('navigation')[0];
       const logEntry = {
         visitId: `${sessionId}-${uuidv4()}`,
@@ -85,6 +106,8 @@ export function useUserLogger(page) {
         assets: assetsRef.current,
         screenWidth: window.innerWidth,
         loadTime: navTiming?.duration || 100,
+        browser: parsedUserAgent.browser,
+        device: parsedUserAgent.device,
       };
 
       const db = await openDB('predictpulse_logs', 1);
